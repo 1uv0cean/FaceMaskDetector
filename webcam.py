@@ -132,7 +132,9 @@ while True:
         
         # 정확도
         label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
-
+        if mask > withoutMask:
+                print("Masked")
+                exec(open("../motor.py").read())
         # frame에 표시
         cv2.putText(frame, label, (startX, startY - 10),
             cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
